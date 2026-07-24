@@ -231,14 +231,6 @@ Las credenciales no viven en el repo — se configuran como **Repository Secrets
 
 > Settings → Secrets and variables → Actions → New repository secret
 
-### Artefactos generados
-
-Después de cada ejecución, el pipeline sube un ZIP descargable desde la pestaña **Actions** con:
-- Reporte HTML interactivo
-- Screenshots de todos los escenarios (passed/failed)
-- Reporte JSON
-
-Los artefactos se conservan **7 días** por ejecución.
 
 ### Trigger manual
 
@@ -257,32 +249,7 @@ Se utiliza Cucumber con Gherkin para escribir los escenarios en lenguaje natural
 - Documentación viva de los requisitos
 - Fácil mantenimiento y comprensión de los tests
 
-### Cobertura de Pruebas
 
-El proyecto cubre los siguientes flujos:
-
-1. **Autenticación (5 escenarios)**
-   - Login exitoso con usuario estándar
-   - Login fallido con usuario bloqueado
-   - Login fallido con credenciales inválidas
-   - Login fallido con campos vacíos
-   - Logout exitoso
-
-2. **Gestión del Carrito (5 escenarios)**
-   - Agregar un producto al carrito
-   - Agregar múltiples productos
-   - Ver productos en el carrito
-   - Remover productos del carrito
-   - Continuar comprando desde el carrito
-
-3. **Proceso de Compra (5 escenarios)**
-   - Completar compra exitosamente
-   - Validación de campos obligatorios
-   - Validación de información parcial
-   - Cancelar proceso de checkout
-   - Verificar cálculos de precios
-
-**Total:** 15 escenarios que validan el flujo completo de la aplicación
 
 ### Tipos de Pruebas
 

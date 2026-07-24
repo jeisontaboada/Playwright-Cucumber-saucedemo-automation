@@ -1,34 +1,50 @@
 <?xml version="1.0"?>
-<testsuite failures="0" skipped="0" name="cucumber-js" time="15.113244784" tests="5">
-  <testcase classname="HU-001 Iniciar sesión en Sauce Demo" name="ES-001 Login exitoso con usuario estándar" time="5.2546825969999995">
+<testsuite failures="0" skipped="0" name="cucumber-js" time="6.331525179" tests="5">
+  <testcase classname="HU-002 Gestión del carrito de compras" name="ES-004 Agregar un producto al carrito" time="1.2652489990000002">
     <system-out><![CDATA[Given el usuario está en la página de login...............................passed
 When el usuario ingresa credenciales válidas de usuario estándar..........passed
-Then el usuario debería ver la página de productos........................passed
-And el título de la página debería ser "Products".........................passed]]></system-out>
+And el usuario está en la página de productos.............................passed
+When el usuario agrega el producto "Sauce Labs Backpack" al carrito.......passed
+Then el contador del carrito debería mostrar 1............................passed
+And el botón del producto debería cambiar a "Remove"......................passed]]></system-out>
   </testcase>
-  <testcase classname="HU-001 Iniciar sesión en Sauce Demo" name="ES-002 Login fallido con usuario bloqueado" time="4.901431497">
-    <system-out><![CDATA[Given el usuario está en la página de login...............................passed
-When el usuario ingresa credenciales de usuario bloqueado.................passed
-Then el usuario debería ver un mensaje de error...........................passed
-And el mensaje de error debería contener "locked out".....................passed]]></system-out>
-  </testcase>
-  <testcase classname="HU-001 Iniciar sesión en Sauce Demo" name="ES-003 Login fallido con credenciales inválidas" time="1.472386997">
-    <system-out><![CDATA[Given el usuario está en la página de login...............................passed
-When el usuario ingresa credenciales inválidas............................passed
-Then el usuario debería ver un mensaje de error...........................passed
-And el mensaje de error debería contener "do not match"...................passed]]></system-out>
-  </testcase>
-  <testcase classname="HU-001 Iniciar sesión en Sauce Demo" name="ES-014 Logout exitoso" time="2.396984696">
+  <testcase classname="HU-002 Gestión del carrito de compras" name="ES-005 Agregar múltiples productos al carrito" time="1.4665794959999996">
     <system-out><![CDATA[Given el usuario está en la página de login...............................passed
 When el usuario ingresa credenciales válidas de usuario estándar..........passed
-Then el usuario debería ver la página de productos........................passed
-When el usuario cierra sesión.............................................passed
-Then el usuario debería estar en la página de login.......................passed]]></system-out>
+And el usuario está en la página de productos.............................passed
+When el usuario agrega el producto "Sauce Labs Backpack" al carrito.......passed
+And el usuario agrega el producto "Sauce Labs Bike Light" al carrito......passed
+Then el contador del carrito debería mostrar 2............................passed
+When el usuario navega al carrito.........................................passed
+Then el producto "Sauce Labs Backpack" debería estar visible en el carr...passed
+And el producto "Sauce Labs Bike Light" debería estar visible en el car...passed]]></system-out>
   </testcase>
-  <testcase classname="HU-001 Iniciar sesión en Sauce Demo" name="ES-015 Login fallido con campos vacíos" time="1.0877589970000001">
+  <testcase classname="HU-002 Gestión del carrito de compras" name="ES-006 Ver productos en el carrito" time="1.2190836969999999">
     <system-out><![CDATA[Given el usuario está en la página de login...............................passed
-When el usuario hace click en login sin ingresar credenciales.............passed
-Then el usuario debería ver un mensaje de error...........................passed
-And el mensaje de error debería contener "Username is required"...........passed]]></system-out>
+When el usuario ingresa credenciales válidas de usuario estándar..........passed
+And el usuario está en la página de productos.............................passed
+When el usuario agrega el producto "Sauce Labs Backpack" al carrito.......passed
+And el usuario navega al carrito..........................................passed
+Then el producto "Sauce Labs Backpack" debería estar visible en el carr...passed
+And el título de la página debería ser "Your Cart"........................passed]]></system-out>
+  </testcase>
+  <testcase classname="HU-002 Gestión del carrito de compras" name="ES-007 Remover producto del carrito" time="1.2479276929999998">
+    <system-out><![CDATA[Given el usuario está en la página de login...............................passed
+When el usuario ingresa credenciales válidas de usuario estándar..........passed
+And el usuario está en la página de productos.............................passed
+When el usuario agrega el producto "Sauce Labs Backpack" al carrito.......passed
+And el usuario navega al carrito..........................................passed
+And el usuario remueve el producto "Sauce Labs Backpack" del carrito......passed
+Then el carrito debería estar vacío.......................................passed
+And el contador del carrito no debería ser visible........................passed]]></system-out>
+  </testcase>
+  <testcase classname="HU-002 Gestión del carrito de compras" name="ES-008 Continuar comprando desde el carrito" time="1.132685294">
+    <system-out><![CDATA[Given el usuario está en la página de login...............................passed
+When el usuario ingresa credenciales válidas de usuario estándar..........passed
+And el usuario está en la página de productos.............................passed
+When el usuario agrega el producto "Sauce Labs Backpack" al carrito.......passed
+And el usuario navega al carrito..........................................passed
+And el usuario hace click en "Continue Shopping"..........................passed
+Then el usuario debería ver la página de productos........................passed]]></system-out>
   </testcase>
 </testsuite>
