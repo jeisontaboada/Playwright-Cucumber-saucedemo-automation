@@ -1,0 +1,30 @@
+# Dependencias
+node_modules/
+
+# Variables de entorno (¡IMPORTANTE!)
+.env
+
+# Archivos compilados
+dist/
+
+# Reportes y resultados
+test-results/
+playwright-report/
+reports/*.json
+reports/*.xml
+reports/screenshots/failed/
+*.xml
+
+# Videos y screenshots
+videos/
+traces/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo

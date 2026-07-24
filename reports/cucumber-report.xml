@@ -1,66 +1,34 @@
 <?xml version="1.0"?>
-<testsuite failures="0" skipped="0" name="cucumber-js" time="6.161796067000001" tests="5">
-  <testcase classname="HU-003 Proceso de checkout y compra" name="ES-009 Completar compra exitosamente" time="1.34561489">
+<testsuite failures="0" skipped="0" name="cucumber-js" time="15.113244784" tests="5">
+  <testcase classname="HU-001 Iniciar sesión en Sauce Demo" name="ES-001 Login exitoso con usuario estándar" time="5.2546825969999995">
     <system-out><![CDATA[Given el usuario está en la página de login...............................passed
 When el usuario ingresa credenciales válidas de usuario estándar..........passed
-And el usuario está en la página de productos.............................passed
-When el usuario agrega el producto "Sauce Labs Backpack" al carrito.......passed
-And el usuario navega al carrito..........................................passed
-When el usuario procede al checkout.......................................passed
-And el usuario completa la información del checkout con:..................passed
-And el usuario continúa al resumen del checkout...........................passed
-Then el usuario debería ver el resumen de la orden........................passed
-And el producto "Sauce Labs Backpack" debería estar en el resumen.........passed
-When el usuario finaliza la compra........................................passed
-Then el usuario debería ver la confirmación de la orden...................passed
-And el mensaje de confirmación debería contener "Thank you for your ord...passed]]></system-out>
+Then el usuario debería ver la página de productos........................passed
+And el título de la página debería ser "Products".........................passed]]></system-out>
   </testcase>
-  <testcase classname="HU-003 Proceso de checkout y compra" name="ES-010-011 Checkout fallido con datos obligatorios incompletos" time="1.286746794">
+  <testcase classname="HU-001 Iniciar sesión en Sauce Demo" name="ES-002 Login fallido con usuario bloqueado" time="4.901431497">
     <system-out><![CDATA[Given el usuario está en la página de login...............................passed
-When el usuario ingresa credenciales válidas de usuario estándar..........passed
-And el usuario está en la página de productos.............................passed
-When el usuario agrega el producto "Sauce Labs Backpack" al carrito.......passed
-And el usuario navega al carrito..........................................passed
-When el usuario procede al checkout.......................................passed
-And el usuario ingresa el nombre "" en checkout...........................passed
-And el usuario continúa al resumen del checkout...........................passed
+When el usuario ingresa credenciales de usuario bloqueado.................passed
 Then el usuario debería ver un mensaje de error...........................passed
-And el mensaje de error debería contener "First Name is required".........passed]]></system-out>
+And el mensaje de error debería contener "locked out".....................passed]]></system-out>
   </testcase>
-  <testcase classname="HU-003 Proceso de checkout y compra" name="ES-010-011 Checkout fallido con datos obligatorios incompletos [1]" time="1.2949423940000004">
+  <testcase classname="HU-001 Iniciar sesión en Sauce Demo" name="ES-003 Login fallido con credenciales inválidas" time="1.472386997">
     <system-out><![CDATA[Given el usuario está en la página de login...............................passed
-When el usuario ingresa credenciales válidas de usuario estándar..........passed
-And el usuario está en la página de productos.............................passed
-When el usuario agrega el producto "Sauce Labs Backpack" al carrito.......passed
-And el usuario navega al carrito..........................................passed
-When el usuario procede al checkout.......................................passed
-And el usuario ingresa el nombre "Jeison" en checkout.....................passed
-And el usuario continúa al resumen del checkout...........................passed
+When el usuario ingresa credenciales inválidas............................passed
 Then el usuario debería ver un mensaje de error...........................passed
-And el mensaje de error debería contener "Last Name is required"..........passed]]></system-out>
+And el mensaje de error debería contener "do not match"...................passed]]></system-out>
   </testcase>
-  <testcase classname="HU-003 Proceso de checkout y compra" name="ES-012 Cancelar checkout y volver al carrito" time="1.2007073939999997">
+  <testcase classname="HU-001 Iniciar sesión en Sauce Demo" name="ES-014 Logout exitoso" time="2.396984696">
     <system-out><![CDATA[Given el usuario está en la página de login...............................passed
 When el usuario ingresa credenciales válidas de usuario estándar..........passed
-And el usuario está en la página de productos.............................passed
-When el usuario agrega el producto "Sauce Labs Backpack" al carrito.......passed
-And el usuario navega al carrito..........................................passed
-When el usuario procede al checkout.......................................passed
-And el usuario cancela el checkout........................................passed
-Then el título de la página debería ser "Your Cart".......................passed]]></system-out>
+Then el usuario debería ver la página de productos........................passed
+When el usuario cierra sesión.............................................passed
+Then el usuario debería estar en la página de login.......................passed]]></system-out>
   </testcase>
-  <testcase classname="HU-003 Proceso de checkout y compra" name="ES-013 Verificar información en resumen de orden" time="1.0337845950000002">
+  <testcase classname="HU-001 Iniciar sesión en Sauce Demo" name="ES-015 Login fallido con campos vacíos" time="1.0877589970000001">
     <system-out><![CDATA[Given el usuario está en la página de login...............................passed
-When el usuario ingresa credenciales válidas de usuario estándar..........passed
-And el usuario está en la página de productos.............................passed
-When el usuario agrega el producto "Sauce Labs Backpack" al carrito.......passed
-And el usuario navega al carrito..........................................passed
-When el usuario procede al checkout.......................................passed
-And el usuario completa la información del checkout con:..................passed
-And el usuario continúa al resumen del checkout...........................passed
-Then el usuario debería ver el resumen de la orden........................passed
-And el subtotal debería ser mayor a 0.....................................passed
-And el impuesto debería ser mayor a 0.....................................passed
-And el total debería ser igual al subtotal más el impuesto................passed]]></system-out>
+When el usuario hace click en login sin ingresar credenciales.............passed
+Then el usuario debería ver un mensaje de error...........................passed
+And el mensaje de error debería contener "Username is required"...........passed]]></system-out>
   </testcase>
 </testsuite>

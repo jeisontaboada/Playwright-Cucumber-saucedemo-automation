@@ -1,0 +1,37 @@
+{
+  "name": "playwright-cucumber-saucedemo-automation",
+  "version": "1.0.0",
+  "description": "Automated testing suite for Sauce Demo using Playwright and Cucumber",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js",
+    "report": "node src/support/report.js",
+    "test:smoke": "cucumber-js --tags @smoke",
+    "test:login": "cucumber-js --tags @login",
+    "test:shopping": "cucumber-js --tags @shopping",
+    "test:checkout": "cucumber-js --tags @checkout",
+    "test:happy": "cucumber-js --tags @happy_path",
+    "test:unhappy": "cucumber-js --tags @unhappy_path",
+    "test:sequential": "cucumber-js --parallel 1"
+  },
+  "keywords": [
+    "playwright",
+    "cucumber",
+    "automation",
+    "testing",
+    "saucedemo"
+  ],
+  "author": "Jeison",
+  "license": "ISC",
+  "devDependencies": {
+    "@cucumber/cucumber": "^10.3.1",
+    "@playwright/test": "^1.40.1",
+    "@types/node": "^20.10.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "multiple-cucumber-html-reporter": "^3.6.2",
+    "dotenv": "^16.3.1"
+  }
+}
