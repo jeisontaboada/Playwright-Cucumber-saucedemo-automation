@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<testsuite failures="0" skipped="0" name="cucumber-js" time="6.161796067000001" tests="5">
+  <testcase classname="HU-003 Proceso de checkout y compra" name="ES-009 Completar compra exitosamente" time="1.34561489">
+    <system-out><![CDATA[Given el usuario está en la página de login...............................passed
+When el usuario ingresa credenciales válidas de usuario estándar..........passed
+And el usuario está en la página de productos.............................passed
+When el usuario agrega el producto "Sauce Labs Backpack" al carrito.......passed
+And el usuario navega al carrito..........................................passed
+When el usuario procede al checkout.......................................passed
+And el usuario completa la información del checkout con:..................passed
+And el usuario continúa al resumen del checkout...........................passed
+Then el usuario debería ver el resumen de la orden........................passed
+And el producto "Sauce Labs Backpack" debería estar en el resumen.........passed
+When el usuario finaliza la compra........................................passed
+Then el usuario debería ver la confirmación de la orden...................passed
+And el mensaje de confirmación debería contener "Thank you for your ord...passed]]></system-out>
+  </testcase>
+  <testcase classname="HU-003 Proceso de checkout y compra" name="ES-010-011 Checkout fallido con datos obligatorios incompletos" time="1.286746794">
+    <system-out><![CDATA[Given el usuario está en la página de login...............................passed
+When el usuario ingresa credenciales válidas de usuario estándar..........passed
+And el usuario está en la página de productos.............................passed
+When el usuario agrega el producto "Sauce Labs Backpack" al carrito.......passed
+And el usuario navega al carrito..........................................passed
+When el usuario procede al checkout.......................................passed
+And el usuario ingresa el nombre "" en checkout...........................passed
+And el usuario continúa al resumen del checkout...........................passed
+Then el usuario debería ver un mensaje de error...........................passed
+And el mensaje de error debería contener "First Name is required".........passed]]></system-out>
+  </testcase>
+  <testcase classname="HU-003 Proceso de checkout y compra" name="ES-010-011 Checkout fallido con datos obligatorios incompletos [1]" time="1.2949423940000004">
+    <system-out><![CDATA[Given el usuario está en la página de login...............................passed
+When el usuario ingresa credenciales válidas de usuario estándar..........passed
+And el usuario está en la página de productos.............................passed
+When el usuario agrega el producto "Sauce Labs Backpack" al carrito.......passed
+And el usuario navega al carrito..........................................passed
+When el usuario procede al checkout.......................................passed
+And el usuario ingresa el nombre "Jeison" en checkout.....................passed
+And el usuario continúa al resumen del checkout...........................passed
+Then el usuario debería ver un mensaje de error...........................passed
+And el mensaje de error debería contener "Last Name is required"..........passed]]></system-out>
+  </testcase>
+  <testcase classname="HU-003 Proceso de checkout y compra" name="ES-012 Cancelar checkout y volver al carrito" time="1.2007073939999997">
+    <system-out><![CDATA[Given el usuario está en la página de login...............................passed
+When el usuario ingresa credenciales válidas de usuario estándar..........passed
+And el usuario está en la página de productos.............................passed
+When el usuario agrega el producto "Sauce Labs Backpack" al carrito.......passed
+And el usuario navega al carrito..........................................passed
+When el usuario procede al checkout.......................................passed
+And el usuario cancela el checkout........................................passed
+Then el título de la página debería ser "Your Cart".......................passed]]></system-out>
+  </testcase>
+  <testcase classname="HU-003 Proceso de checkout y compra" name="ES-013 Verificar información en resumen de orden" time="1.0337845950000002">
+    <system-out><![CDATA[Given el usuario está en la página de login...............................passed
+When el usuario ingresa credenciales válidas de usuario estándar..........passed
+And el usuario está en la página de productos.............................passed
+When el usuario agrega el producto "Sauce Labs Backpack" al carrito.......passed
+And el usuario navega al carrito..........................................passed
+When el usuario procede al checkout.......................................passed
+And el usuario completa la información del checkout con:..................passed
+And el usuario continúa al resumen del checkout...........................passed
+Then el usuario debería ver el resumen de la orden........................passed
+And el subtotal debería ser mayor a 0.....................................passed
+And el impuesto debería ser mayor a 0.....................................passed
+And el total debería ser igual al subtotal más el impuesto................passed]]></system-out>
+  </testcase>
+</testsuite>
